@@ -1,0 +1,1253 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  31/Aug/2022  10:16:48
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\anton\OneDrive\Documentos\UTFPR\Disciplinas\Sistemas
+#        Embarcados\elf74\atbk2000_elf74\Lab1\Debug\Exe\Lab1.out
+#    Map file     =
+#        C:\Users\anton\OneDrive\Documentos\UTFPR\Disciplinas\Sistemas
+#        Embarcados\elf74\atbk2000_elf74\Lab1\Debug\List\Lab1.map
+#    Command line =
+#        -f "C:\Users\anton\OneDrive\Documentos\UTFPR\Disciplinas\Sistemas
+#        Embarcados\elf74\atbk2000_elf74\Lab1\Debug\Exe\Lab1.out.rsp"
+#        ("C:\Users\anton\OneDrive\Documentos\UTFPR\Disciplinas\Sistemas
+#        Embarcados\elf74\atbk2000_elf74\Lab1\Debug\Obj\main.o"
+#        --no_out_extension -o
+#        "C:\Users\anton\OneDrive\Documentos\UTFPR\Disciplinas\Sistemas
+#        Embarcados\elf74\atbk2000_elf74\Lab1\Debug\Exe\Lab1.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        "C:\Users\anton\OneDrive\Documentos\UTFPR\Disciplinas\Sistemas
+#        Embarcados\elf74\atbk2000_elf74\Lab1\Debug\List\Lab1.map" --config
+#        "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor                     = *
+__CPP_Exceptions              = Disabled
+__CPP_Language                = C++14
+__Heap_Handler                = Basic
+__SystemLibrary               = DLib
+__dlib_dynamic_initialization = normal
+__dlib_version                = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0xf'ffff] { ro };
+define block CSTACK with size = 32K, alignment = 8 { };
+define block HEAP with size = 64K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2003'ffff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section                Kind         Address      Size  Object
+  -------                ----         -------      ----  ------
+"A0":                                              0x40
+  .intvec                ro code          0x0      0x40  vector_table_M.o [5]
+                                       - 0x40      0x40
+
+"P1":                                            0x5ed0
+  .text                  ro code         0x40     0xf12  xprintffull_nomb.o [2]
+  .text                  ro code        0xf52      0x2a  copy_init3.o [5]
+  .text                  ro code        0xf7c      0x16  strchr.o [5]
+  .text                  ro code        0xf92      0x22  iostream_cin.o [3]
+  .text                  ro code        0xfb4      0x40  xfail_s.o [2]
+  .text                  ro code        0xff4      0x36  strlen.o [5]
+  .text                  ro code       0x102a       0xa  xsprout.o [2]
+  .text                  ro code       0x1034      0x58  memchr.o [5]
+  .text                  ro code       0x108c      0x76  ABImemcpy_unaligned.o [5]
+  .text                  ro code       0x1102       0x6  iostream_cin.o [3]
+  .text                  ro code       0x1108      0x70  frexp.o [4]
+  .text                  ro code       0x1178      0x34  DblCmpLe.o [4]
+  .text                  ro code       0x11ac      0x34  DblCmpGe.o [4]
+  .text                  ro code       0x11e0     0x13a  ldexp.o [4]
+  .text                  ro code       0x131a       0x6  iostream_cin.o [3]
+  .text                  ro code       0x1320      0x36  DblToS32.o [4]
+  .rodata                const         0x1356       0x2  main.o [1]
+  .text                  ro code       0x1358      0x22  S32ToDbl.o [4]
+  .text                  ro code       0x137a       0x2  iostream_cin.o [3]
+  .text                  ro code       0x137c     0x24e  DblAddSub.o [4]
+  .text                  ro code       0x15ca       0x2  iostream_cin.o [3]
+  .text                  ro code       0x15cc     0x246  DblDiv.o [4]
+  .text                  ro code       0x1812       0x2  vectortrap_M.o [5]
+  .text                  ro code       0x1814      0x22  DblToU32.o [4]
+  .rodata                const         0x1836       0x1  main.o [1]
+  .rodata                zero          0x1837       0x1  main.o [1]
+  .text                  ro code       0x1838      0x1c  U32ToDbl.o [4]
+  .text                  ro code       0x1854     0x1aa  DblMul.o [4]
+  .rodata                const         0x19fe       0x1  unwind_debug.o [6]
+  .text                  ro code       0x1a00     0x230  I64DivMod.o [5]
+  .text                  ro code       0x1c30       0x6  abort.o [2]
+  .text                  ro code       0x1c38       0x2  I64DivZer.o [5]
+  .text                  ro code       0x1c3c      0x14  exit.o [6]
+  .text                  ro code       0x1c50      0x7c  iarttio.o [6]
+  .text                  ro code       0x1ccc       0x8  XShttio.o [2]
+  .text                  ro code       0x1cd4     0x4b0  main.o [1]
+  .text                  ro code       0x2184       0x4  main.o [1]
+  .text                  ro code       0x2188       0x6  main.o [1]
+  .text                  ro code       0x2190     0x4a0  main.o [1]
+  .text                  ro code       0x2630      0x34  main.o [1]
+  .text                  ro code       0x2664       0xa  main.o [1]
+  .text                  ro code       0x2670      0x24  main.o [1]
+  .text                  ro code       0x2694      0x12  main.o [1]
+  .text                  ro code       0x26a6       0x8  main.o [1]
+  .text                  ro code       0x26ae      0x14  main.o [1]
+  .text                  ro code       0x26c2       0xe  main.o [1]
+  .text                  ro code       0x26d0       0xc  main.o [1]
+  .text                  ro code       0x26dc       0xa  main.o [1]
+  .text                  ro code       0x26e6      0x14  main.o [1]
+  .text                  ro code       0x26fa      0x1e  main.o [1]
+  .text                  ro code       0x2718       0xa  main.o [1]
+  .text                  ro code       0x2722      0x2a  main.o [1]
+  .text                  ro code       0x274c      0x5a  main.o [1]
+  .text                  ro code       0x27a6       0xc  main.o [1]
+  .text                  ro code       0x27b2      0x12  main.o [1]
+  .text                  ro code       0x27c4       0xa  main.o [1]
+  .text                  ro code       0x27d0      0x18  main.o [1]
+  .text                  ro code       0x27e8       0xa  cxxabi.o [3]
+  .text                  ro code       0x27f4      0x18  main.o [1]
+  .text                  ro code       0x280c      0x40  main.o [1]
+  .text                  ro code       0x284c      0x3a  main.o [1]
+  .text                  ro code       0x2886      0x34  main.o [1]
+  .text                  ro code       0x28ba       0xc  main.o [1]
+  .text                  ro code       0x28c6       0xa  main.o [1]
+  .text                  ro code       0x28d0       0x8  main.o [1]
+  .text                  ro code       0x28d8      0x7a  main.o [1]
+  .text                  ro code       0x2952      0x3a  main.o [1]
+  .text                  ro code       0x298c       0xa  main.o [1]
+  .text                  ro code       0x2996      0x7a  main.o [1]
+  .text                  ro code       0x2a10      0x2a  main.o [1]
+  .text                  ro code       0x2a3a      0x28  main.o [1]
+  .text                  ro code       0x2a62       0xc  main.o [1]
+  .text                  ro code       0x2a6e       0x8  main.o [1]
+  .text                  ro code       0x2a78      0xa0  cppinit.o [2]
+  .text                  ro code       0x2b18       0x8  main.o [1]
+  .text                  ro code       0x2b20      0x24  main.o [1]
+  .text                  ro code       0x2b44      0x12  main.o [1]
+  .text                  ro code       0x2b56       0x6  main.o [1]
+  .text                  ro code       0x2b5c      0x24  main.o [1]
+  .text                  ro code       0x2b80       0x8  main.o [1]
+  .text                  ro code       0x2b88      0x12  main.o [1]
+  .text                  ro code       0x2b9c      0x18  main.o [1]
+  .text                  ro code       0x2bb4       0xa  main.o [1]
+  .text                  ro code       0x2bbe       0x8  main.o [1]
+  .text                  ro code       0x2bc6       0x8  main.o [1]
+  .text                  ro code       0x2bce       0x8  main.o [1]
+  .text                  ro code       0x2bd6       0x8  main.o [1]
+  .text                  ro code       0x2bde       0xe  main.o [1]
+  .text                  ro code       0x2bec       0x8  main.o [1]
+  .text                  ro code       0x2bf4       0x8  main.o [1]
+  .text                  ro code       0x2bfc      0x18  main.o [1]
+  .text                  ro code       0x2c14      0xd6  main.o [1]
+  .text                  ro code       0x2cea       0x6  main.o [1]
+  .text                  ro code       0x2cf0      0x10  main.o [1]
+  .text                  ro code       0x2d00      0x12  main.o [1]
+  .text                  ro code       0x2d14      0x28  main.o [1]
+  .text                  ro code       0x2d3c       0xc  main.o [1]
+  .text                  ro code       0x2d48      0x18  main.o [1]
+  .text                  ro code       0x2d60       0x6  main.o [1]
+  .text                  ro code       0x2d66       0x4  main.o [1]
+  .text                  ro code       0x2d6a       0xe  main.o [1]
+  .text                  ro code       0x2d78       0x2  main.o [1]
+  .text                  ro code       0x2d7a      0x1c  main.o [1]
+  .text                  ro code       0x2d96       0x2  main.o [1]
+  .text                  ro code       0x2d98       0x8  main.o [1]
+  .text                  ro code       0x2da0       0x2  main.o [1]
+  .text                  ro code       0x2da2       0xc  main.o [1]
+  .text                  ro code       0x2dae       0x2  main.o [1]
+  .text                  ro code       0x2db0       0x8  main.o [1]
+  .text                  ro code       0x2db8       0x8  main.o [1]
+  .text                  ro code       0x2dc0       0x8  main.o [1]
+  .text                  ro code       0x2dc8       0x2  main.o [1]
+  .text                  ro code       0x2dca      0x18  main.o [1]
+  .text                  ro code       0x2de4      0x66  ABImemset.o [5]
+  .text                  ro code       0x2e4c      0x70  main.o [1]
+  .text                  ro code       0x2ebc       0x4  main.o [1]
+  .text                  ro code       0x2ec0       0x2  main.o [1]
+  .text                  ro code       0x2ec2       0x8  main.o [1]
+  .text                  ro code       0x2eca       0xa  main.o [1]
+  .text                  ro code       0x2ed4       0x2  main.o [1]
+  .text                  ro code       0x2ed6       0x8  main.o [1]
+  .text                  ro code       0x2ede       0x2  main.o [1]
+  .text                  ro code       0x2ee0       0x8  main.o [1]
+  .text                  ro code       0x2ee8       0xe  main.o [1]
+  .text                  ro code       0x2ef6       0x2  main.o [1]
+  .text                  ro code       0x2ef8      0x18  main.o [1]
+  .text                  ro code       0x2f10      0x34  main.o [1]
+  .text                  ro code       0x2f44      0x1a  main.o [1]
+  .text                  ro code       0x2f5e       0x2  main.o [1]
+  .text                  ro code       0x2f60       0xa  delop_0.o [3]
+  .text                  ro code       0x2f6a       0x6  main.o [1]
+  .text                  ro code       0x2f70      0x12  main.o [1]
+  .text                  ro code       0x2f82      0x20  main.o [1]
+  .text                  ro code       0x2fa4     0x13c  heap0.o [2]
+  .text                  ro code       0x30e0       0x4  heaptramp0.o [2]
+  .text                  ro code       0x30e4      0x24  newop_0.o [3]
+  .text                  ro code       0x3108       0x4  main.o [1]
+  .text                  ro code       0x310c      0x2c  xgetmemchunk.o [2]
+  .text                  ro code       0x3138       0x4  nomemory.o [3]
+  .text                  ro code       0x313c     0x2ac  main.o [1]
+  .text                  ro code       0x33e8      0x22  strcspn.o [2]
+  .text                  ro code       0x340a       0x6  main.o [1]
+  .text                  ro code       0x3410      0x96  main.o [1]
+  .text                  ro code       0x34a6       0x4  main.o [1]
+  .text                  ro code       0x34aa      0x2e  main.o [1]
+  .text                  ro code       0x34d8      0x2e  main.o [1]
+  .text                  ro code       0x3506       0x8  main.o [1]
+  .text                  ro code       0x350e       0xe  main.o [1]
+  .text                  ro code       0x351c       0x2  main.o [1]
+  .text                  ro code       0x351e      0x2e  main.o [1]
+  .text                  ro code       0x354c       0x2  main.o [1]
+  .text                  ro code       0x3550      0x78  ABImemmove_unaligned.o [5]
+  .text                  ro code       0x35c8      0x32  main.o [1]
+  .text                  ro code       0x35fa      0x18  main.o [1]
+  .text                  ro code       0x3612       0xe  main.o [1]
+  .text                  ro code       0x3620     0x26c  strto32.o [4]
+  .text                  ro code       0x388c      0x48  frexpf.o [4]
+  .text                  ro code       0x38d4      0xc4  ldexpf.o [4]
+  .text                  ro code       0x3998     0x120  iar_Stopfx.o [2]
+  .text                  ro code       0x3ab8     0x1a8  iar_Stoflt.o [2]
+  .text                  ro code       0x3c60     0x20c  iar_Stoxflt.o [2]
+  .text                  ro code       0x3e6c     0x234  main.o [1]
+  .text                  ro code       0x40a0     0x1dc  main.o [1]
+  .text                  ro code       0x427c       0x4  main.o [1]
+  .text                  ro code       0x4280      0x20  DblCmpEq.o [4]
+  .text                  ro code       0x42a0      0xfe  main.o [1]
+  .text                  ro code       0x43a0      0x40  sprintf.o [2]
+  .text                  ro code       0x43e0     0x1bc  main.o [1]
+  .text                  ro code       0x459c     0x1b2  main.o [1]
+  .text                  ro code       0x474e       0x6  main.o [1]
+  .text                  ro code       0x4754      0xc4  main.o [1]
+  .text                  ro code       0x4818      0x9a  main.o [1]
+  .text                  ro code       0x48b4      0x84  main.o [1]
+  .text                  ro code       0x4938      0xb0  main.o [1]
+  .text                  ro code       0x49e8       0x8  main.o [1]
+  .text                  ro code       0x49f0      0x72  main.o [1]
+  .text                  ro code       0x4a62       0x4  main.o [1]
+  .text                  ro code       0x4a66       0x8  main.o [1]
+  .text                  ro code       0x4a6e       0x6  main.o [1]
+  .text                  ro code       0x4a74       0x4  main.o [1]
+  .text                  ro code       0x4a78       0xa  main.o [1]
+  .text                  ro code       0x4a82      0x28  main.o [1]
+  .text                  ro code       0x4aaa       0xe  main.o [1]
+  .text                  ro code       0x4ab8      0x24  main.o [1]
+  .text                  ro code       0x4adc       0x8  main.o [1]
+  .text                  ro code       0x4ae4      0x28  main.o [1]
+  .text                  ro code       0x4b0c       0x4  main.o [1]
+  .text                  ro code       0x4b10      0x1c  main.o [1]
+  .text                  ro code       0x4b2c       0x4  main.o [1]
+  .text                  ro code       0x4b30      0x24  main.o [1]
+  .text                  ro code       0x4b54      0x14  main.o [1]
+  .text                  ro code       0x4b68      0x2e  main.o [1]
+  .text                  ro code       0x4b96       0xe  main.o [1]
+  .text                  ro code       0x4ba4      0x48  FltToDbl.o [4]
+  .text                  ro code       0x4bec      0x28  main.o [1]
+  .text                  ro code       0x4c14       0x8  main.o [1]
+  .text                  ro code       0x4c1c      0x14  main.o [1]
+  .text                  ro code       0x4c30       0x4  main.o [1]
+  .text                  ro code       0x4c34      0x54  main.o [1]
+  .text                  ro code       0x4c88       0x4  main.o [1]
+  .text                  ro code       0x4c8c      0x18  main.o [1]
+  .text                  ro code       0x4ca4       0x8  main.o [1]
+  .text                  ro code       0x4cac      0x18  main.o [1]
+  .text                  ro code       0x4cc4       0x8  main.o [1]
+  .text                  ro code       0x4ccc      0xe4  main.o [1]
+  .text                  ro code       0x4db0      0x18  main.o [1]
+  .text                  ro code       0x4dc8       0x8  main.o [1]
+  .text                  ro code       0x4dd0      0x28  main.o [1]
+  .text                  ro code       0x4df8       0xa  main.o [1]
+  .text                  ro code       0x4e02      0x14  main.o [1]
+  .text                  ro code       0x4e18     0x100  ios.o [3]
+  .text                  ro code       0x4f18       0x8  main.o [1]
+  .text                  ro code       0x4f20      0x48  main.o [1]
+  .text                  ro code       0x4f68      0x20  main.o [1]
+  .text                  ro code       0x4f88      0x42  main.o [1]
+  .text                  ro code       0x4fca       0x8  main.o [1]
+  .text                  ro code       0x4fd2      0x46  main.o [1]
+  .text                  ro code       0x5018       0x8  main.o [1]
+  .text                  ro code       0x5020      0x54  main.o [1]
+  .text                  ro code       0x5074       0x8  main.o [1]
+  .text                  ro code       0x507c       0x4  delop4_0.o [3]
+  .text                  ro code       0x5080       0xc  main.o [1]
+  .text                  ro code       0x508c       0x6  main.o [1]
+  .text                  ro code       0x5092      0x14  isspace.o [2]
+  .text                  ro code       0x50a6      0x10  main.o [1]
+  .text                  ro code       0x50b8       0xc  main.o [1]
+  .text                  ro code       0x50c4      0x48  main.o [1]
+  .text                  ro code       0x510c      0x46  main.o [1]
+  .text                  ro code       0x5152      0xa0  main.o [1]
+  .text                  ro code       0x51f4      0x94  iostream_cin.o [3]
+  .text                  ro code       0x5288      0x5c  iostream_cin.o [3]
+  .text                  ro code       0x52e4      0x90  main.o [1]
+  .text                  ro code       0x5374      0x90  iostream_cout.o [3]
+  .text                  ro code       0x5404      0x7c  main.o [1]
+  .text                  ro code       0x5480      0x22  main.o [1]
+  .text                  ro code       0x54a2      0x6c  main.o [1]
+  .text                  ro code       0x550e      0x76  main.o [1]
+  .rodata                const         0x5584      0x6c  main.o [1]
+  .text                  ro code       0x55f0      0x60  main.o [1]
+  .text                  ro code       0x5650      0x5e  iostream_cin.o [3]
+  .text                  ro code       0x56ae      0x52  main.o [1]
+  .text                  ro code       0x5700      0x32  main.o [1]
+  .text                  ro code       0x5732      0x4a  iostream_cin.o [3]
+  .text                  ro code       0x577c      0x38  getchar.o [2]
+  .text                  ro code       0x57b4      0x30  read.o [6]
+  .rodata                const         0x57e4      0x44  iostream_cin.o [3]
+  .rodata                const         0x5828      0x44  iostream_cin.o [3]
+  .rodata                const         0x586c      0x3c  main.o [1]
+  .rodata                const         0x58a8      0x3c  main.o [1]
+  .text                  ro code       0x58e4      0x38  iostream_cin.o [3]
+  .text                  ro code       0x591c      0x20  putchar.o [2]
+  .text                  ro code       0x593c      0x10  write.o [6]
+  .text                  ro code       0x594c      0x1e  dwrite.o [6]
+  .text                  ro code       0x596a      0x20  iarwstd.o [6]
+  .text                  ro code       0x598a      0x22  iarwrite.o [6]
+  .text                  ro code       0x59ac      0x38  zero_init3.o [5]
+  .rodata                const         0x59e4      0x34  main.o [1]
+  .text                  ro code       0x5a18      0x34  iostream_cin.o [3]
+  .rodata                const         0x5a4c      0x30  main.o [1]
+  .rodata                const         0x5a7c      0x30  main.o [1]
+  .text                  ro code       0x5aac      0x2e  main.o [1]
+  .text                  ro code       0x5ada      0x12  main.o [1]
+  .text                  ro code       0x5aec      0x2c  iostream_cin.o [3]
+  .rodata                const         0x5b18      0x28  iostream_cin.o [3]
+  .rodata                const         0x5b40      0x28  iostream_cout.o [3]
+  .text                  ro code       0x5b68      0x28  data_init.o [5]
+  .rodata                const         0x5b90      0x24  main.o [1]
+  .rodata                const         0x5bb4      0x24  main.o [1]
+  .text                  ro code       0x5bd8      0x24  main.o [1]
+  .text                  ro code       0x5bfc      0x18  main.o [1]
+  .text                  ro code       0x5c14      0x22  fpinit_M.o [4]
+  .iar.init_table        const         0x5c38      0x28  - Linker created -
+  .rodata                const         0x5c60      0x20  main.o [1]
+  .rodata                const         0x5c80      0x20  main.o [1]
+  .text                  ro code       0x5ca0      0x20  cmain_call_ctors.o [5]
+  .text                  ro code       0x5cc0      0x1e  cmain.o [5]
+  .text                  ro code       0x5cde       0x4  low_level_init.o [2]
+  .text                  ro code       0x5ce2       0x4  exit.o [2]
+  .text                  ro code       0x5ce8       0xe  cexit.o [5]
+  .text                  ro code       0x5cf8      0x1c  cstartup_M.o [5]
+  .rodata                const         0x5d14      0x18  main.o [1]
+  .rodata                const         0x5d2c      0x18  main.o [1]
+  .rodata                const         0x5d44      0x18  main.o [1]
+  .text                  ro code       0x5d5c      0x18  main.o [1]
+  .text                  ro code       0x5d74      0x18  main.o [1]
+  .text                  ro code       0x5d8c       0x4  delaop_0.o [3]
+  .rodata                const         0x5d90      0x14  main.o [1]
+  .text                  ro code       0x5da4      0x14  iostream_cout.o [3]
+  Initializer bytes      const         0x5db8      0x14  <for P2-1>
+  .rodata                const         0x5dcc      0x10  main.o [1]
+  .rodata                const         0x5ddc      0x10  main.o [1]
+  .rodata                const         0x5dec      0x10  main.o [1]
+  .rodata                const         0x5dfc      0x10  main.o [1]
+  .rodata                const         0x5e0c      0x10  main.o [1]
+  .rodata                const         0x5e1c      0x10  ios.o [3]
+  .rodata                const         0x5e2c      0x10  iostream_cin.o [3]
+  .text                  ro code       0x5e3c      0x10  iostream_cin.o [3]
+  .text                  ro code       0x5e4c       0xe  main.o [1]
+  .text                  ro code       0x5e5a       0x8  main.o [1]
+  .text                  ro code       0x5e62       0xe  iostream_cout.o [3]
+  .rodata                const         0x5e70       0xc  main.o [1]
+  .rodata                const         0x5e7c       0xc  main.o [1]
+  .rodata                const         0x5e88       0xc  main.o [1]
+  .rodata                const         0x5e94       0xc  main.o [1]
+  .rodata                const         0x5ea0       0xc  main.o [1]
+  .rodata                const         0x5eac       0xc  main.o [1]
+  .rodata                const         0x5eb8       0xc  main.o [1]
+  .rodata                const         0x5ec4       0xc  main.o [1]
+  SHT$$PREINIT_ARRAY                   0x5ed0       0x8  <Block>
+    .preinit_array       const         0x5ed0       0x4  iostream_cin.o [3]
+    .preinit_array       const         0x5ed4       0x4  iostream_cout.o [3]
+  SHT$$INIT_ARRAY                      0x5ed8       0x4  <Block>
+    .init_array          const         0x5ed8       0x4  ios.o [3]
+  __iar_tls$$INIT_ARRAY                0x5edc       0x0  <Block>
+  .text                  ro code       0x5edc       0xa  main.o [1]
+  .rodata                const         0x5ee8       0x8  main.o [1]
+  .rodata                const         0x5ef0       0x8  main.o [1]
+  .rodata                const         0x5ef8       0x4  main.o [1]
+  .rodata                const         0x5efc       0x4  main.o [1]
+  .rodata                const         0x5f00       0x4  main.o [1]
+  .text                  ro code       0x5f04       0x4  main.o [1]
+  .text                  ro code       0x5f08       0x4  main.o [1]
+  .text                  ro code       0x5f0c       0x4  iostream_cin.o [3]
+  .text                  ro code       0x5f10       0x0  cstart_call_dtors.o [5]
+  .rodata                const         0x5f10       0x0  zero_init3.o [5]
+  .rodata                const         0x5f10       0x0  copy_init3.o [5]
+                                     - 0x5f10    0x5ed0
+
+"P2", part 1 of 3:                                 0x14
+  P2-1                            0x2000'0000      0x14  <Init block>
+    .data                inited   0x2000'0000       0x8  main.o [1]
+    .data                inited   0x2000'0008       0x4  getchar.o [2]
+    .data                inited   0x2000'000c       0x8  XShttio.o [2]
+                                - 0x2000'0014      0x14
+
+"P2", part 2 of 3:                                0x168
+  .bss                   zero     0x2000'0014      0x70  iostream_cin.o [3]
+  .bss                   zero     0x2000'0084      0x70  iostream_cout.o [3]
+  .bss                   zero     0x2000'00f4      0x34  ios.o [3]
+  .bss                   zero     0x2000'0128      0x14  main.o [1]
+  .bss                   zero     0x2000'0140      0x10  ios.o [3]
+  .bss                   zero     0x2000'0150       0x8  heap0.o [2]
+  .bss                   zero     0x2000'0158       0x4  main.o [1]
+  .bss                   zero     0x2000'015c       0x4  main.o [1]
+  .bss                   zero     0x2000'0160       0x4  main.o [1]
+  .bss                   zero     0x2000'0164       0x4  cppinit.o [2]
+  .bss                   zero     0x2000'0168       0x4  cppinit.o [2]
+  .bss                   zero     0x2000'016c       0x4  new.o [3]
+  .bss                   zero     0x2000'0170       0x4  xfail_s.o [2]
+  .bss                   zero     0x2000'0174       0x4  xgetmemchunk.o [2]
+  .bss                   zero     0x2000'0178       0x1  main.o [1]
+  .bss                   zero     0x2000'0179       0x1  main.o [1]
+  .bss                   zero     0x2000'017a       0x1  main.o [1]
+  .bss                   zero     0x2000'017b       0x1  main.o [1]
+                                - 0x2000'017c     0x168
+
+"P2", part 3 of 3:                             0x1'81b4
+  .iar.dynexit                    0x2000'017c     0x1b0  <Block>
+    .iar.dynexit         uninit   0x2000'017c       0xc  cppinit.o [2]
+    .iar.dynexit         uninit   0x2000'0188     0x1a4  <Block tail>
+  CSTACK                          0x2000'0330    0x8000  <Block>
+    CSTACK               uninit   0x2000'0330    0x8000  <Block tail>
+  HEAP                            0x2000'8330  0x1'0000  <Block>
+    HEAP                 uninit   0x2000'8330  0x1'0000  <Block tail>
+                                - 0x2001'8330  0x1'81b4
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x5f10     0xf'ffff  0xf'a0f0
+  0x2001'8330  0x2003'ffff  0x2'7cd0
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x168:
+          0x2000'0014  0x168
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x14:
+               0x5db8   0x14
+    1 destination range, total size 0x14:
+          0x2000'0000   0x14
+
+Extra (__iar_cstart_call_ctors)
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\Users\anton\OneDrive\Documentos\UTFPR\Disciplinas\Sistemas Embarcados\elf74\atbk2000_elf74\Lab1\Debug\Obj: [1]
+    main.o                   11'124      819       45
+    -------------------------------------------------
+    Total:                   11'124      819       45
+
+dl7M_tln.a: [2]
+    XShttio.o                     8        8        8
+    abort.o                       6
+    cppinit.o                   160                20
+    exit.o                        4
+    getchar.o                    56        4        4
+    heap0.o                     316                 8
+    heaptramp0.o                  4
+    iar_Stoflt.o                424
+    iar_Stopfx.o                288
+    iar_Stoxflt.o               524
+    isspace.o                    20
+    low_level_init.o              4
+    putchar.o                    32
+    sprintf.o                    64
+    strcspn.o                    34
+    xfail_s.o                    64                 4
+    xgetmemchunk.o               44                 4
+    xprintffull_nomb.o        3'858
+    xsprout.o                    10
+    -------------------------------------------------
+    Total:                    5'920       12       48
+
+dlpp7M_tl_nc.a: [3]
+    cxxabi.o                     10
+    delaop_0.o                    4
+    delop4_0.o                    4
+    delop_0.o                    10
+    ios.o                       256       20       68
+    iostream_cin.o              630      196      112
+    iostream_cout.o             178       44      112
+    new.o                                           4
+    newop_0.o                    36
+    nomemory.o                    4
+    -------------------------------------------------
+    Total:                    1'132      260      296
+
+m7M_tls.a: [4]
+    DblAddSub.o                 590
+    DblCmpEq.o                   32
+    DblCmpGe.o                   52
+    DblCmpLe.o                   52
+    DblDiv.o                    582
+    DblMul.o                    426
+    DblToS32.o                   54
+    DblToU32.o                   34
+    FltToDbl.o                   72
+    S32ToDbl.o                   34
+    U32ToDbl.o                   28
+    fpinit_M.o                   34
+    frexp.o                     112
+    frexpf.o                     72
+    ldexp.o                     314
+    ldexpf.o                    196
+    strto32.o                   620
+    -------------------------------------------------
+    Total:                    3'304
+
+rt7M_tl.a: [5]
+    ABImemcpy_unaligned.o       118
+    ABImemmove_unaligned.o      120
+    ABImemset.o                 102
+    I64DivMod.o                 560
+    I64DivZer.o                   2
+    cexit.o                      14
+    cmain.o                      30
+    cmain_call_ctors.o           32
+    copy_init3.o                 42
+    cstart_call_dtors.o
+    cstartup_M.o                 28
+    data_init.o                  40
+    memchr.o                     88
+    strchr.o                     22
+    strlen.o                     54
+    vector_table_M.o             64
+    vectortrap_M.o                2
+    zero_init3.o                 56
+    -------------------------------------------------
+    Total:                    1'374
+
+shb_l.a: [6]
+    dwrite.o                     30
+    exit.o                       20
+    iarttio.o                   124
+    iarwrite.o                   34
+    iarwstd.o                    32
+    read.o                       48
+    unwind_debug.o                         1
+    write.o                      16
+    -------------------------------------------------
+    Total:                      304        1
+
+    Gaps                         41        4        4
+    Linker created                        40   98'724
+-----------------------------------------------------
+    Grand Total:             23'199    1'136   99'117
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.dynexit$$Base      0x2000'017c          --   Gb  - Linker created -
+.iar.dynexit$$Limit     0x2000'032c          --   Gb  - Linker created -
+.iar.init_table$$Base        0x5c38          --   Gb  - Linker created -
+.iar.init_table$$Limit       0x5c60          --   Gb  - Linker created -
+?main                        0x5cc1         Code  Gb  cmain.o [5]
+Aldata                  0x2000'0150    0x8  Data  Lc  heap0.o [2]
+BusFault_Handler             0x1813         Code  Wk  vectortrap_M.o [5]
+CSTACK$$Base            0x2000'0330          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'8330          --   Gb  - Linker created -
+DebugMon_Handler             0x1813         Code  Wk  vectortrap_M.o [5]
+Dtentox                      0x3621  0x14a  Code  Lc  strto32.o [4]
+DtorRecArray            0x2000'017c    0xc  Data  Lc  cppinit.o [2]
+HEAP$$Base              0x2000'8330          --   Gb  - Linker created -
+HEAP$$Limit             0x2001'8330          --   Gb  - Linker created -
+HardFault_Handler            0x1813         Code  Wk  vectortrap_M.o [5]
+Initialization guard variable for std::ctype<char> const & std::use_facet<std::ctype<char>>()::_MyFacet
+                        0x2000'0178    0x1  Data  Gb  main.o [1]
+Initialization guard variable for std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>> const & std::use_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>>()::_MyFacet
+                        0x2000'017a    0x1  Data  Gb  main.o [1]
+Initialization guard variable for std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>> const & std::use_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>>()::_MyFacet
+                        0x2000'0179    0x1  Data  Gb  main.o [1]
+Initialization guard variable for std::numpunct<char> const & std::use_facet<std::numpunct<char>>()::_MyFacet
+                        0x2000'017b    0x1  Data  Gb  main.o [1]
+MemManage_Handler            0x1813         Code  Wk  vectortrap_M.o [5]
+NMI_Handler                  0x1813         Code  Wk  vectortrap_M.o [5]
+PendSV_Handler               0x1813         Code  Wk  vectortrap_M.o [5]
+Region$$Table$$Base          0x5c38          --   Gb  - Linker created -
+Region$$Table$$Limit         0x5c60          --   Gb  - Linker created -
+SHT$$INIT_ARRAY$$Base        0x5ed8          --   Gb  - Linker created -
+SHT$$INIT_ARRAY$$Limit       0x5edc          --   Gb  - Linker created -
+SHT$$PREINIT_ARRAY$$Base
+                             0x5ed0          --   Gb  - Linker created -
+SHT$$PREINIT_ARRAY$$Limit
+                             0x5ed8          --   Gb  - Linker created -
+SVC_Handler                  0x1813         Code  Wk  vectortrap_M.o [5]
+SysTick_Handler              0x1813         Code  Wk  vectortrap_M.o [5]
+UsageFault_Handler           0x1813         Code  Wk  vectortrap_M.o [5]
+Virtual function table for std::_Wrap_facet<std::ctype<char>>
+                             0x5ddc   0x10  Data  Gb  main.o [1]
+Virtual function table for std::_Wrap_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>>
+                             0x58a8   0x3c  Data  Gb  main.o [1]
+Virtual function table for std::_Wrap_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>>
+                             0x5a7c   0x30  Data  Gb  main.o [1]
+Virtual function table for std::_Wrap_facet<std::numpunct<char>>
+                             0x5bb4   0x24  Data  Gb  main.o [1]
+Virtual function table for std::__nobasic_filebuf<char, std::char_traits<char>>
+                             0x5828   0x44  Data  Gb  iostream_cin.o [3]
+Virtual function table for std::ctype<char>
+                             0x5dcc   0x10  Data  Gb  main.o [1]
+Virtual function table for std::ios
+                             0x5e2c   0x10  Data  Gb  iostream_cin.o [3]
+Virtual function table for std::ios_base
+                             0x5e1c   0x10  Data  Gb  ios.o [3]
+Virtual function table for std::istream
+                             0x5b18   0x28  Data  Gb  iostream_cin.o [3]
+Virtual function table for std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>
+                             0x586c   0x3c  Data  Gb  main.o [1]
+Virtual function table for std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>
+                             0x5a4c   0x30  Data  Gb  main.o [1]
+Virtual function table for std::numpunct<char>
+                             0x5b90   0x24  Data  Gb  main.o [1]
+Virtual function table for std::ostream
+                             0x5b40   0x28  Data  Gb  iostream_cout.o [3]
+Virtual function table for std::streambuf
+                             0x57e4   0x44  Data  Gb  iostream_cin.o [3]
+[local to ios_cpp]::std::stdopens
+                        0x2000'00f4    0xc  Data  Lc  ios.o [3]
+[local to ios_cpp]::std::stdstr
+                        0x2000'0100   0x28  Data  Lc  ios.o [3]
+[local to iostream_cin_cpp]::std::fin
+                        0x2000'0044   0x40  Data  Lc  iostream_cin.o [3]
+[local to iostream_cout_cpp]::std::__iarcoutguard
+                        0x2000'00b0    0x1  Data  Lc  iostream_cout.o [3]
+[local to iostream_cout_cpp]::std::fout
+                        0x2000'00b4   0x40  Data  Lc  iostream_cout.o [3]
+_LitobFullNoMb                0xd59  0x10c  Code  Lc  xprintffull_nomb.o [2]
+_PrintfFullNoMb                0x41  0xcea  Code  Gb  xprintffull_nomb.o [2]
+_PutcharFullNoMb              0xebd   0x20  Code  Lc  xprintffull_nomb.o [2]
+_PutcharsFullNoMb             0xedd   0x2e  Code  Lc  xprintffull_nomb.o [2]
+_SProut                      0x102b    0xa  Code  Gb  xsprout.o [2]
+_UngetChar              0x2000'0008    0x4  Data  Lc  getchar.o [2]
+__aeabi_atexit               0x27e9    0xa  Code  Gb  cxxabi.o [3]
+__aeabi_cdcmpeq              0x4281         Code  Gb  DblCmpEq.o [4]
+__aeabi_cdcmple              0x1179         Code  Gb  DblCmpLe.o [4]
+__aeabi_cdrcmple             0x11ad         Code  Gb  DblCmpGe.o [4]
+__aeabi_d2iz                 0x1321         Code  Gb  DblToS32.o [4]
+__aeabi_d2uiz                0x1815         Code  Gb  DblToU32.o [4]
+__aeabi_ddiv                 0x15cd         Code  Gb  DblDiv.o [4]
+__aeabi_dmul                 0x1855         Code  Gb  DblMul.o [4]
+__aeabi_dsub                 0x14e9         Code  Gb  DblAddSub.o [4]
+__aeabi_f2d                  0x4ba5         Code  Gb  FltToDbl.o [4]
+__aeabi_i2d                  0x1359         Code  Gb  S32ToDbl.o [4]
+__aeabi_ldiv0                0x1c39         Code  Gb  I64DivZer.o [5]
+__aeabi_memset               0x2de5         Code  Gb  ABImemset.o [5]
+__aeabi_ui2d                 0x1839         Code  Gb  U32ToDbl.o [4]
+__aeabi_uldivmod             0x1a01         Code  Gb  I64DivMod.o [5]
+__basic_free                 0x3051   0x16  Code  Gb  heap0.o [2]
+__basic_free_intern          0x3067   0x74  Code  Lc  heap0.o [2]
+__basic_malloc               0x2fa5   0x18  Code  Gb  heap0.o [2]
+__basic_malloc_intern        0x2fbd   0x94  Code  Lc  heap0.o [2]
+__call_ctors                 0x2a79   0x18  Code  Gb  cppinit.o [2]
+__call_dtors                 0x2ac7    0xc  Code  Gb  cppinit.o [2]
+__call_dtors0                0x2ad3   0x36  Code  Gb  cppinit.o [2]
+__cexit_call_dtors           0x5ceb         Code  Gb  cexit.o [5]
+__cmain                      0x5cc1         Code  Gb  cmain.o [5]
+__cstart_call_dtors          0x5f10         Data  Gb  cstart_call_dtors.o [5]
+__cxa_atexit                 0x2a91   0x36  Code  Gb  cppinit.o [2]
+__data_GetMemChunk           0x310d   0x2c  Code  Gb  xgetmemchunk.o [2]
+__data_GetMemChunk::start
+                        0x2000'0174    0x4  Data  Lc  xgetmemchunk.o [2]
+__dso_handle            0x2000'0168    0x4  Data  Gb  cppinit.o [2]
+__dwrite                     0x594d   0x1e  Code  Gb  dwrite.o [6]
+__exit                       0x1c3d   0x14  Code  Gb  exit.o [6]
+__iar_Fail_s                  0xfb5   0x1c  Code  Gb  xfail_s.o [2]
+__iar_Memchr                 0x1035         Code  Gb  memchr.o [5]
+__iar_Memset                 0x2de5         Code  Gb  ABImemset.o [5]
+__iar_Memset_word            0x2ded         Code  Gb  ABImemset.o [5]
+__iar_Sto32                  0x376d   0xec  Code  Gb  strto32.o [4]
+__iar_Stoflt                 0x3ab9  0x1a8  Code  Gb  iar_Stoflt.o [2]
+__iar_Stopfx                 0x3999  0x120  Code  Gb  iar_Stopfx.o [2]
+__iar_Stoxflt                0x3c61  0x1d6  Code  Gb  iar_Stoxflt.o [2]
+__iar_Stoxflt::digits        0x3e3c   0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Stoxflt::vals          0x3e54   0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Strchr                  0xf7d         Code  Gb  strchr.o [5]
+__iar_close_ttio             0x1c51   0x2c  Code  Gb  iarttio.o [6]
+__iar_copy_init3              0xf53   0x2a  Code  Gb  copy_init3.o [5]
+__iar_cstart_call_ctors
+                             0x5ca1   0x20  Code  Gb  cmain_call_ctors.o [5]
+__iar_data_init3             0x5b69   0x28  Code  Gb  data_init.o [5]
+__iar_debug_exceptions       0x19fe    0x1  Data  Gb  unwind_debug.o [6]
+__iar_frexp                  0x1115         Code  Gb  frexp.o [4]
+__iar_frexp32                0x388d         Code  Gb  frexpf.o [4]
+__iar_frexpf                 0x38a1         Code  Gb  frexpf.o [4]
+__iar_frexpl                 0x1115         Code  Gb  frexp.o [4]
+__iar_get_ttio               0x1c7d   0x4c  Code  Gb  iarttio.o [6]
+__iar_init_vfp               0x5c15         Code  Gb  fpinit_M.o [4]
+__iar_ldexp32                0x38d5         Code  Gb  ldexpf.o [4]
+__iar_ldexp64                0x11e1         Code  Gb  ldexp.o [4]
+__iar_lookup_ttioh           0x1ccd    0x8  Code  Gb  XShttio.o [2]
+__iar_program_start          0x5cf9         Code  Gb  cstartup_M.o [5]
+__iar_scalbln32              0x38d5         Code  Gb  ldexpf.o [4]
+__iar_scalbln64              0x11e1         Code  Gb  ldexp.o [4]
+__iar_scalbn32               0x38d5         Code  Gb  ldexpf.o [4]
+__iar_scalbn64               0x11e1         Code  Gb  ldexp.o [4]
+__iar_sh_stdout              0x596b   0x20  Code  Gb  iarwstd.o [6]
+__iar_sh_write               0x598b   0x22  Code  Gb  iarwrite.o [6]
+__iar_softfp___iar_frexp64
+                             0x1109         Code  Gb  frexp.o [4]
+__iar_softfp_frexp           0x1109         Code  Gb  frexp.o [4]
+__iar_softfp_frexpl          0x1109         Code  Gb  frexp.o [4]
+__iar_tls$$INIT_ARRAY$$Base
+                             0x5edc          --   Gb  - Linker created -
+__iar_tls$$INIT_ARRAY$$Limit
+                             0x5edc          --   Gb  - Linker created -
+__iar_ttio_handles      0x2000'000c    0x8  Data  Lc  XShttio.o [2]
+__iar_unaligned_memcpy       0x108d         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned_memcpy4
+                             0x10ad         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned_memcpy8
+                             0x10ad         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned_memmove
+                             0x3551         Code  Gb  ABImemmove_unaligned.o [5]
+__iar_unaligned_memmove4
+                             0x3551         Code  Gb  ABImemmove_unaligned.o [5]
+__iar_unaligned_memmove8
+                             0x3551         Code  Gb  ABImemmove_unaligned.o [5]
+__iar_zero_init3             0x59ad   0x38  Code  Gb  zero_init3.o [5]
+__low_level_init             0x5cdf    0x4  Code  Gb  low_level_init.o [2]
+__read                       0x57b5   0x30  Code  Gb  read.o [6]
+__sti__routine               0x4e1b    0xa  Code  Lc  ios.o [3]
+__sti__routine               0x51f5   0x94  Code  Lc  iostream_cin.o [3]
+__sti__routine               0x5375   0x90  Code  Lc  iostream_cout.o [3]
+__ungetchar                  0x57ab    0x6  Code  Gb  getchar.o [2]
+__vector_table                  0x0         Data  Gb  vector_table_M.o [5]
+__write                      0x593d   0x10  Code  Gb  write.o [6]
+_call_main                   0x5ccd         Code  Gb  cmain.o [5]
+_exit                        0x5ce9         Code  Gb  cexit.o [5]
+abort                        0x1c31    0x6  Code  Gb  abort.o [2]
+bool std::operator !=<char, std::char_traits<char>>(std::istreambuf_iterator<char, std::char_traits<char>> const &, std::istreambuf_iterator<char, std::char_traits<char>> const &)
+                             0x26e7   0x14  Code  Gb  main.o [1]
+bool std::operator ==<char, std::char_traits<char>>(std::istreambuf_iterator<char, std::char_traits<char>> const &, std::istreambuf_iterator<char, std::char_traits<char>> const &)
+                             0x26a7    0x8  Code  Gb  main.o [1]
+char * && std::forward<char *>(std::remove_reference<char *>::type &)
+                             0x2ef7    0x2  Code  Gb  main.o [1]
+char * std::_Addressof<char>(char &, std::integral_constant<bool, (bool)0>)
+                             0x2da1    0x2  Code  Gb  main.o [1]
+char * std::_Allocate<char>(unsigned int, char *, bool)
+                             0x2f71   0x12  Code  Gb  main.o [1]
+char * std::_Maklocstr<char>(char const *, char *)
+                             0x2f11   0x34  Code  Gb  main.o [1]
+char * std::addressof<char>(char &)
+                             0x2bd7    0x8  Code  Gb  main.o [1]
+char std::_Maklocchr<char>(char, char *)
+                             0x2ebd    0x4  Code  Gb  main.o [1]
+const std::allocator<char>& && std::forward<const std::allocator<char>&>(std::remove_reference<const std::allocator<char>&>::type &)
+                             0x2ec1    0x2  Code  Gb  main.o [1]
+exit                         0x5ce3    0x4  Code  Gb  exit.o [2]
+free                         0x30e1    0x4  Code  Gb  heaptramp0.o [2]
+frexpf                       0x388d         Code  Gb  frexpf.o [4]
+getchar                      0x577d   0x2e  Code  Gb  getchar.o [2]
+isspace                      0x5093   0x14  Code  Gb  isspace.o [2]
+ldexp                        0x11e1         Code  Gb  ldexp.o [4]
+ldexpf                       0x38d5         Code  Gb  ldexpf.o [4]
+ldexpl                       0x11e1         Code  Gb  ldexp.o [4]
+main                         0x43e1  0x1bc  Code  Gb  main.o [1]
+memchr                       0x1035         Code  Gb  memchr.o [5]
+next_abi_dtor_rec       0x2000'0164    0x4  Data  Lc  cppinit.o [2]
+operator delete (void *)
+                             0x2f61    0xa  Code  Gb  delop_0.o [3]
+operator delete (void *, unsigned int)
+                             0x507d    0x4  Code  Gb  delop4_0.o [3]
+operator delete[] (void *)
+                             0x5d8d    0x4  Code  Gb  delaop_0.o [3]
+operator new (unsigned int)
+                             0x30e5   0x24  Code  Gb  newop_0.o [3]
+operator new (unsigned int, void *)
+                             0x3109    0x4  Code  Gb  main.o [1]
+pows                         0x3874   0x18  Data  Lc  strto32.o [4]
+putchar                      0x591d   0x20  Code  Gb  putchar.o [2]
+scalbln                      0x11e1         Code  Gb  ldexp.o [4]
+scalblnf                     0x38d5         Code  Gb  ldexpf.o [4]
+scalblnl                     0x11e1         Code  Gb  ldexp.o [4]
+scalbn                       0x11e1         Code  Gb  ldexp.o [4]
+scalbnf                      0x38d5         Code  Gb  ldexpf.o [4]
+scalbnl                      0x11e1         Code  Gb  ldexp.o [4]
+scale                         0xe65   0x46  Code  Lc  xprintffull_nomb.o [2]
+sec_hand                0x2000'0170    0x4  Data  Lc  xfail_s.o [2]
+sprintf                      0x43a1   0x40  Code  Gb  sprintf.o [2]
+std::_Compressed_pair<std::_Wrap_alloc<std::allocator<char>>, std::_String_val<std::_Simple_types<char>>, (bool)1>::_Compressed_pair<const std::allocator<char>&, >(std::_One_then_variadic_args_t, const std::allocator<char>& &&,  &&...)
+                             0x2d7b   0x1c  Code  Gb  main.o [1]
+std::_Compressed_pair<std::_Wrap_alloc<std::allocator<char>>, std::_String_val<std::_Simple_types<char>>, (bool)1>::_Get_first()
+                             0x2d97    0x2  Code  Gb  main.o [1]
+std::_Compressed_pair<std::_Wrap_alloc<std::allocator<char>>, std::_String_val<std::_Simple_types<char>>, (bool)1>::_Get_first() const
+                             0x2edf    0x2  Code  Gb  main.o [1]
+std::_Compressed_pair<std::_Wrap_alloc<std::allocator<char>>, std::_String_val<std::_Simple_types<char>>, (bool)1>::_Get_second()
+                             0x2daf    0x2  Code  Gb  main.o [1]
+std::_Compressed_pair<std::_Wrap_alloc<std::allocator<char>>, std::_String_val<std::_Simple_types<char>>, (bool)1>::_Get_second() const
+                             0x2d79    0x2  Code  Gb  main.o [1]
+std::_Fpz               0x2000'0140   0x10  Data  Gb  ios.o [3]
+std::_NomemoryNothrow()
+                             0x3139    0x4  Code  Gb  nomemory.o [3]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_Bx()
+                             0x2bbf    0x8  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_Get_data()
+                             0x2bf5    0x8  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_Get_data() const
+                             0x2b81    0x8  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_Getal()
+                             0x2bc7    0x8  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_Getal() const
+                             0x2db1    0x8  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_Myptr()
+                             0x2a63    0xc  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_Myptr() const
+                             0x28bb    0xc  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_Myres()
+                             0x2bb5    0xa  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_Mysize()
+                             0x298d    0xa  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_Mysize() const
+                             0x28c7    0xa  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_String_alloc(const std::allocator<char>&)
+                             0x2b9d   0x18  Code  Gb  main.o [1]
+std::_String_alloc<std::_String_base_types<char, std::allocator<char>>>::_String_alloc(const std::allocator<char>&) [subobject]
+                             0x28d1    0x8  Code  Gb  main.o [1]
+std::_String_val<std::_Simple_types<char>>::_Myptr()
+                             0x2d01   0x12  Code  Gb  main.o [1]
+std::_String_val<std::_Simple_types<char>>::_Myptr() const
+                             0x2b89   0x12  Code  Gb  main.o [1]
+std::_String_val<std::_Simple_types<char>>::_String_val()
+                             0x2ecb    0xa  Code  Gb  main.o [1]
+std::_Wrap_alloc<std::allocator<char>>::_Wrap_alloc(const std::allocator<char>&)
+                             0x2f5f    0x2  Code  Gb  main.o [1]
+std::_Wrap_alloc<std::allocator<char>>::_Wrap_alloc(const std::allocator<char>&) [subobject]
+                             0x2ec3    0x8  Code  Gb  main.o [1]
+std::_Wrap_alloc<std::allocator<char>>::allocate(unsigned int)
+                             0x2dc1    0x8  Code  Gb  main.o [1]
+std::_Wrap_alloc<std::allocator<char>>::deallocate(char *, unsigned int)
+                             0x2bed    0x8  Code  Gb  main.o [1]
+std::_Wrap_alloc<std::allocator<char>>::max_size(std::_Nil) const
+                             0x2db9    0x8  Code  Gb  main.o [1]
+std::_Wrap_facet<std::ctype<char>>::_Wrap_facet()
+                             0x27f5   0x18  Code  Gb  main.o [1]
+std::_Wrap_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>>::_Wrap_facet()
+                             0x4db1   0x18  Code  Gb  main.o [1]
+std::_Wrap_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>>::_Wrap_facet()
+                             0x4cad   0x18  Code  Gb  main.o [1]
+std::_Wrap_facet<std::numpunct<char>>::_Wrap_facet()
+                             0x27d1   0x18  Code  Gb  main.o [1]
+std::_Wrap_facet<std::numpunct<char>>::~_Wrap_facet()
+                             0x5e4d    0xe  Code  Gb  main.o [1]
+std::__iar_New_hand     0x2000'016c    0x4  Data  Gb  new.o [3]
+std::__iar_cout_guard::~__iar_cout_guard()
+                             0x5da5   0x14  Code  Gb  iostream_cout.o [3]
+std::__nobasic_filebuf<char, std::char_traits<char>>::__nobasic_filebuf()
+                             0x5289   0x5c  Code  Gb  iostream_cin.o [3]
+std::__nobasic_filebuf<char, std::char_traits<char>>::overflow(int)
+                             0x58e5   0x38  Code  Gb  iostream_cin.o [3]
+std::__nobasic_filebuf<char, std::char_traits<char>>::pbackfail(int)
+                             0x5733   0x4a  Code  Gb  iostream_cin.o [3]
+std::__nobasic_filebuf<char, std::char_traits<char>>::uflow()
+                             0x5aed   0x2c  Code  Gb  iostream_cin.o [3]
+std::__nobasic_filebuf<char, std::char_traits<char>>::underflow()
+                             0x5a19   0x34  Code  Gb  iostream_cin.o [3]
+std::allocator<char>::allocate(unsigned int)
+                             0x2ee9    0xe  Code  Gb  main.o [1]
+std::allocator<char>::deallocate(char *, unsigned int)
+                             0x2da3    0xc  Code  Gb  main.o [1]
+std::allocator<char>::max_size() const
+                             0x2f6b    0x6  Code  Gb  main.o [1]
+std::allocator_traits<std::allocator<char>>::max_size(const std::allocator<char>&)
+                             0x2ee1    0x8  Code  Gb  main.o [1]
+std::char_traits<char>::assign(char &, char const &)
+                             0x2ceb    0x6  Code  Gb  main.o [1]
+std::char_traits<char>::assign(char *, unsigned int, char)
+                             0x2cf1   0x10  Code  Gb  main.o [1]
+std::char_traits<char>::copy(char *, char const *, unsigned int)
+                             0x2bdf    0xe  Code  Gb  main.o [1]
+std::char_traits<char>::eq_int_type(int const &, int const &)
+                             0x2b45   0x12  Code  Gb  main.o [1]
+std::char_traits<char>::length(char const *)
+                             0x49e9    0x8  Code  Gb  main.o [1]
+std::char_traits<char>::move(char *, char const *, unsigned int)
+                             0x350f    0xe  Code  Gb  main.o [1]
+std::char_traits<char>::to_char_type(int const &)
+                             0x2b57    0x6  Code  Gb  main.o [1]
+std::char_traits<char>::to_int_type(char const &)
+                             0x2d67    0x4  Code  Gb  main.o [1]
+std::cin                0x2000'0014   0x30  Data  Gb  iostream_cin.o [3]
+std::cout               0x2000'0084   0x2c  Data  Gb  iostream_cout.o [3]
+std::ctype<char> const & std::use_facet<std::ctype<char>>()
+                             0x2671   0x24  Code  Gb  main.o [1]
+std::ctype<char> const & std::use_facet<std::ctype<char>>()::_MyFacet
+                        0x2000'0158    0x4  Data  Gb  main.o [1]
+std::ctype<char>::ctype()
+                             0x2d3d    0xc  Code  Gb  main.o [1]
+std::ctype<char>::ctype() [subobject]
+                             0x2b19    0x8  Code  Gb  main.o [1]
+std::ctype<char>::is(short, char) const
+                             0x4f69   0x20  Code  Gb  main.o [1]
+std::ctype<char>::narrow(char, char) const
+                             0x508d    0x6  Code  Gb  main.o [1]
+std::ctype<char>::widen(char const *, char const *, char *) const
+                             0x2695   0x12  Code  Gb  main.o [1]
+std::ctype<char>::widen(char) const
+                             0x340b    0x6  Code  Gb  main.o [1]
+std::ios::clear(std::_Iosb<int>::_Iostate, bool)
+                             0x4c8d   0x18  Code  Gb  main.o [1]
+std::ios::fill() const       0x4a6f    0x6  Code  Gb  main.o [1]
+std::ios::rdbuf() const
+                             0x4a75    0x4  Code  Gb  main.o [1]
+std::ios::setstate(std::_Iosb<int>::_Iostate, bool)
+                             0x4a83   0x28  Code  Gb  main.o [1]
+std::ios::tie() const        0x4c31    0x4  Code  Gb  main.o [1]
+std::ios::widen(char) const
+                             0x5adb   0x12  Code  Gb  main.o [1]
+std::ios_base::_Addstd(std::ios_base*)
+                             0x4e85   0x32  Code  Gb  ios.o [3]
+std::ios_base::_Callfns(std::ios_base::event)
+                             0x4e69   0x1c  Code  Gb  ios.o [3]
+std::ios_base::_Init()       0x4ec5   0x1c  Code  Gb  ios.o [3]
+std::ios_base::_Tidy()       0x4ee1   0x38  Code  Gb  ios.o [3]
+std::ios_base::clear(std::_Iosb<int>::_Iostate, bool)
+                             0x4e25   0x20  Code  Gb  ios.o [3]
+std::ios_base::flags() const
+                             0x2185    0x4  Code  Gb  main.o [1]
+std::ios_base::good() const
+                             0x4c1d   0x14  Code  Gb  main.o [1]
+std::ios_base::precision() const
+                             0x427d    0x4  Code  Gb  main.o [1]
+std::ios_base::rdstate() const
+                             0x4c89    0x4  Code  Gb  main.o [1]
+std::ios_base::width() const
+                             0x34a7    0x4  Code  Gb  main.o [1]
+std::ios_base::width(int)
+                             0x3507    0x8  Code  Gb  main.o [1]
+std::ios_base::~ios_base()
+                             0x4e45   0x24  Code  Gb  ios.o [3]
+std::ios_base::~ios_base() [subobject]
+                             0x4e19    0x2  Code  Gb  ios.o [3]
+std::istream::_Ipfx(bool)
+                             0x4ccd   0xe4  Code  Gb  main.o [1]
+std::istream::_Sentry_base::_Sentry_base(std::istream&)
+                             0x4f21   0x48  Code  Gb  main.o [1]
+std::istream::_Sentry_base::_Sentry_base(std::istream&) [subobject]
+                             0x4cc5    0x8  Code  Gb  main.o [1]
+std::istream::_Sentry_base::~_Sentry_base()
+                             0x4fd3   0x46  Code  Gb  main.o [1]
+std::istream::_Sentry_base::~_Sentry_base() [subobject]
+                             0x4dc9    0x8  Code  Gb  main.o [1]
+std::istream::operator >>(float &)
+                             0x48b5   0x84  Code  Gb  main.o [1]
+std::istream::sentry::operator bool() const
+                             0x4b2d    0x4  Code  Gb  main.o [1]
+std::istream::sentry::sentry(std::istream&, bool)
+                             0x4b11   0x1c  Code  Gb  main.o [1]
+std::istream::sentry::~sentry()
+                             0x4b97    0xe  Code  Gb  main.o [1]
+std::istream::~basic_istream()
+                             0x5e3d   0x10  Code  Gb  iostream_cin.o [3]
+std::istreambuf_iterator<char, std::char_traits<char>>::_Inc()
+                             0x2887   0x34  Code  Gb  main.o [1]
+std::istreambuf_iterator<char, std::char_traits<char>>::_Peek() const
+                             0x284d   0x3a  Code  Gb  main.o [1]
+std::istreambuf_iterator<char, std::char_traits<char>>::equal(const std::istreambuf_iterator<char, std::char_traits<char>>&) const
+                             0x280d   0x40  Code  Gb  main.o [1]
+std::istreambuf_iterator<char, std::char_traits<char>>::istreambuf_iterator(std::streambuf *)
+                             0x4b55   0x14  Code  Gb  main.o [1]
+std::istreambuf_iterator<char, std::char_traits<char>>::operator *() const
+                             0x26af   0x14  Code  Gb  main.o [1]
+std::istreambuf_iterator<char, std::char_traits<char>>::operator ++()
+                             0x26c3    0xe  Code  Gb  main.o [1]
+std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>> const & std::use_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>>()
+                             0x4b31   0x24  Code  Gb  main.o [1]
+std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>> const & std::use_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>>()::_MyFacet
+                        0x2000'0160    0x4  Data  Gb  main.o [1]
+std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>::_Getffld(char *, std::istreambuf_iterator<char, std::char_traits<char>> &, std::istreambuf_iterator<char, std::char_traits<char>> &, std::ios_base &, int *) const
+                             0x1cd5  0x4b0  Code  Gb  main.o [1]
+std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>::_Getffld(char *, std::istreambuf_iterator<char, std::char_traits<char>> &, std::istreambuf_iterator<char, std::char_traits<char>> &, std::ios_base &, int *) const::_Src
+                             0x5e0c   0x10  Data  Gb  main.o [1]
+std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>::_Getffldx(char *, std::istreambuf_iterator<char, std::char_traits<char>> &, std::istreambuf_iterator<char, std::char_traits<char>> &, std::ios_base &, int *) const
+                             0x2191  0x4a0  Code  Gb  main.o [1]
+std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>::_Getffldx(char *, std::istreambuf_iterator<char, std::char_traits<char>> &, std::istreambuf_iterator<char, std::char_traits<char>> &, std::ios_base &, int *) const::_Src
+                             0x5c80   0x20  Data  Gb  main.o [1]
+std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>::do_get(std::istreambuf_iterator<char, std::char_traits<char>>, std::istreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, std::_Iosb<int>::_Iostate &, float &) const
+                             0x52e5   0x90  Code  Gb  main.o [1]
+std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>::get(std::istreambuf_iterator<char, std::char_traits<char>>, std::istreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, std::_Iosb<int>::_Iostate &, float &) const
+                             0x4b69   0x2e  Code  Gb  main.o [1]
+std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>::num_get()
+                             0x50b9    0xc  Code  Gb  main.o [1]
+std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char>>>::num_get() [subobject]
+                             0x4fcb    0x8  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>> const & std::use_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>>()
+                             0x4ab9   0x24  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>> const & std::use_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>>()::_MyFacet
+                        0x2000'015c    0x4  Data  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::_Ffmt(char *, char, std::_Iosb<int>::_Fmtflags) const
+                             0x42a1   0xfe  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::_Fput(std::ostreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, char, char const *, unsigned int, unsigned int, unsigned int, unsigned int) const
+                             0x313d  0x2ac  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::_Fput(std::ostreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, char, char const *, unsigned int, unsigned int, unsigned int, unsigned int) const::string
+                             0x5efc    0x4  Data  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::_Fput(std::ostreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, char, char const *, unsigned int, unsigned int, unsigned int, unsigned int) const::string (instance 2)
+                             0x5f00    0x4  Data  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::_Ifmt(char *, char const *, std::_Iosb<int>::_Fmtflags) const
+                             0x5153   0xa0  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::_Iput(std::ostreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, char, char *, unsigned int) const
+                             0x3e6d  0x234  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::_Put(std::ostreambuf_iterator<char, std::char_traits<char>>, char const *, unsigned int) const
+                             0x34d9   0x2e  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::_Rep(std::ostreambuf_iterator<char, std::char_traits<char>>, char, unsigned int) const
+                             0x34ab   0x2e  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::do_put(std::ostreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, char, double) const
+                             0x40a1  0x1dc  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::do_put(std::ostreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, char, long) const
+                             0x55f1   0x60  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::do_put(std::ostreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, char, long) const::string
+                             0x5ef8    0x4  Data  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::num_put()
+                             0x5081    0xc  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::num_put() [subobject]
+                             0x4f19    0x8  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::put(std::ostreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, char, double) const
+                             0x4bed   0x28  Code  Gb  main.o [1]
+std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char>>>::put(std::ostreambuf_iterator<char, std::char_traits<char>>, std::ios_base &, char, long) const
+                             0x4ae5   0x28  Code  Gb  main.o [1]
+std::numpunct<char> const & std::use_facet<std::numpunct<char>>()
+                             0x2631   0x34  Code  Gb  main.o [1]
+std::numpunct<char> const & std::use_facet<std::numpunct<char>>()::_MyFacet
+                        0x2000'0128   0x14  Data  Gb  main.o [1]
+std::numpunct<char>::_Init(bool)
+                             0x2e4d   0x70  Code  Gb  main.o [1]
+std::numpunct<char>::_Init(bool)::string
+                             0x1836    0x1  Data  Gb  main.o [1]
+std::numpunct<char>::_Init(bool)::string (instance 2)
+                             0x5ee8    0x8  Data  Gb  main.o [1]
+std::numpunct<char>::_Init(bool)::string (instance 3)
+                             0x5ef0    0x8  Data  Gb  main.o [1]
+std::numpunct<char>::_Tidy()
+                             0x5d75   0x18  Code  Gb  main.o [1]
+std::numpunct<char>::decimal_point() const
+                             0x27c5    0xa  Code  Gb  main.o [1]
+std::numpunct<char>::do_decimal_point() const
+                             0x5f05    0x4  Code  Gb  main.o [1]
+std::numpunct<char>::do_grouping() const
+                             0x5edd    0xa  Code  Gb  main.o [1]
+std::numpunct<char>::do_thousands_sep() const
+                             0x5f09    0x4  Code  Gb  main.o [1]
+std::numpunct<char>::grouping() const
+                             0x2665    0xa  Code  Gb  main.o [1]
+std::numpunct<char>::numpunct()
+                             0x2d15   0x28  Code  Gb  main.o [1]
+std::numpunct<char>::numpunct() [subobject]
+                             0x2a6f    0x8  Code  Gb  main.o [1]
+std::numpunct<char>::thousands_sep() const
+                             0x2719    0xa  Code  Gb  main.o [1]
+std::numpunct<char>::~numpunct()
+                             0x5d5d   0x18  Code  Gb  main.o [1]
+std::numpunct<char>::~numpunct() [subobject]
+                             0x5e5b    0x8  Code  Gb  main.o [1]
+std::operator &(std::_Iosb<int>::_Fmtflags, std::_Iosb<int>::_Fmtflags)
+                             0x2189    0x6  Code  Gb  main.o [1]
+std::operator |=(std::_Iosb<int>::_Iostate &, std::_Iosb<int>::_Iostate)
+                             0x4a67    0x8  Code  Gb  main.o [1]
+std::ostream & std::endl<char, std::char_traits<char>>(std::ostream &)
+                             0x5aad   0x2e  Code  Gb  main.o [1]
+std::ostream & std::operator <<<std::char_traits<char>>(std::ostream &, char const *)
+                             0x459d  0x1b2  Code  Gb  main.o [1]
+std::ostream::_Flush_sentry::_Flush_sentry(std::ostream&)
+                             0x4dd1   0x28  Code  Gb  main.o [1]
+std::ostream::_Flush_sentry::_Flush_sentry(std::ostream&) [subobject]
+                             0x4c15    0x8  Code  Gb  main.o [1]
+std::ostream::_Flush_sentry::operator bool() const
+                             0x4a63    0x4  Code  Gb  main.o [1]
+std::ostream::_Flush_sentry::~_Flush_sentry()
+                             0x4e03   0x14  Code  Gb  main.o [1]
+std::ostream::_Flush_sentry::~_Flush_sentry() [subobject]
+                             0x4ca5    0x8  Code  Gb  main.o [1]
+std::ostream::_Osfx()        0x5021   0x54  Code  Gb  main.o [1]
+std::ostream::_Sentry_base::_Sentry_base(std::ostream&)
+                             0x50c5   0x48  Code  Gb  main.o [1]
+std::ostream::_Sentry_base::_Sentry_base(std::ostream&) [subobject]
+                             0x5019    0x8  Code  Gb  main.o [1]
+std::ostream::_Sentry_base::~_Sentry_base()
+                             0x510d   0x46  Code  Gb  main.o [1]
+std::ostream::_Sentry_base::~_Sentry_base() [subobject]
+                             0x5075    0x8  Code  Gb  main.o [1]
+std::ostream::flush()        0x4c35   0x54  Code  Gb  main.o [1]
+std::ostream::operator <<(float)
+                             0x4939   0xb0  Code  Gb  main.o [1]
+std::ostream::operator <<(int)
+                             0x4755   0xc4  Code  Gb  main.o [1]
+std::ostream::operator <<(long)
+                             0x4819   0x9a  Code  Gb  main.o [1]
+std::ostream::operator <<(std::ostream&(*)(std::ostream&))
+                             0x474f    0x6  Code  Gb  main.o [1]
+std::ostream::put(char)
+                             0x550f   0x76  Code  Gb  main.o [1]
+std::ostream::sentry::sentry(std::ostream&)
+                             0x49f1   0x72  Code  Gb  main.o [1]
+std::ostream::sentry::~sentry()
+                             0x4aab    0xe  Code  Gb  main.o [1]
+std::ostream::~basic_ostream()
+                             0x5e63    0xe  Code  Gb  iostream_cout.o [3]
+std::ostreambuf_iterator<char, std::char_traits<char>>::failed() const
+                             0x4b0d    0x4  Code  Gb  main.o [1]
+std::ostreambuf_iterator<char, std::char_traits<char>>::operator *()
+                             0x351d    0x2  Code  Gb  main.o [1]
+std::ostreambuf_iterator<char, std::char_traits<char>>::operator ++()
+                             0x354d    0x2  Code  Gb  main.o [1]
+std::ostreambuf_iterator<char, std::char_traits<char>>::operator =(char)
+                             0x351f   0x2e  Code  Gb  main.o [1]
+std::ostreambuf_iterator<char, std::char_traits<char>>::ostreambuf_iterator(std::streambuf *)
+                             0x4add    0x8  Code  Gb  main.o [1]
+std::remove_reference<char *&>::type && std::move<char *&>(char *& &&)
+                             0x2dc9    0x2  Code  Gb  main.o [1]
+std::streambuf::_Gnavail() const
+                             0x2d49   0x18  Code  Gb  main.o [1]
+std::streambuf::_Gninc()
+                             0x2d6b    0xe  Code  Gb  main.o [1]
+std::streambuf::_Gnpreinc()
+                             0x50a7   0x10  Code  Gb  main.o [1]
+std::streambuf::_Lock()
+                             0x137b    0x2  Code  Gb  iostream_cin.o [3]
+std::streambuf::_Pnavail() const
+                             0x35fb   0x18  Code  Gb  main.o [1]
+std::streambuf::_Pninc()
+                             0x3613    0xe  Code  Gb  main.o [1]
+std::streambuf::_Unlock()
+                             0x15cb    0x2  Code  Gb  iostream_cin.o [3]
+std::streambuf::gptr() const
+                             0x2d61    0x6  Code  Gb  main.o [1]
+std::streambuf::overflow(int)
+                             0x1103    0x6  Code  Gb  iostream_cin.o [3]
+std::streambuf::pubsync()
+                             0x4df9    0xa  Code  Gb  main.o [1]
+std::streambuf::sbumpc()
+                             0x2b5d   0x24  Code  Gb  main.o [1]
+std::streambuf::sgetc()
+                             0x2b21   0x24  Code  Gb  main.o [1]
+std::streambuf::snextc()
+                             0x4f89   0x42  Code  Gb  main.o [1]
+std::streambuf::sputc(char)
+                             0x35c9   0x32  Code  Gb  main.o [1]
+std::streambuf::sputn(char const *, int)
+                             0x4a79    0xa  Code  Gb  main.o [1]
+std::streambuf::sync()       0x5f0d    0x4  Code  Gb  iostream_cin.o [3]
+std::streambuf::uflow()
+                              0xf93   0x22  Code  Gb  iostream_cin.o [3]
+std::streambuf::underflow()
+                             0x131b    0x6  Code  Gb  iostream_cin.o [3]
+std::streambuf::xsputn(char const *, int)
+                             0x5651   0x5e  Code  Gb  iostream_cin.o [3]
+std::string::_Chassign(unsigned int, unsigned int, char)
+                             0x2a11   0x2a  Code  Gb  main.o [1]
+std::string::_Copy(unsigned int, unsigned int)
+                             0x2c15   0xd6  Code  Gb  main.o [1]
+std::string::_Eos(unsigned int)
+                             0x2a3b   0x28  Code  Gb  main.o [1]
+std::string::_Grow(unsigned int, bool)
+                             0x2997   0x7a  Code  Gb  main.o [1]
+std::string::_Inside(char const *)
+                             0x5701   0x32  Code  Gb  main.o [1]
+std::string::_Tidy(bool, unsigned int)
+                             0x28d9   0x7a  Code  Gb  main.o [1]
+std::string::append(unsigned int, char)
+                             0x274d   0x5a  Code  Gb  main.o [1]
+std::string::assign(char const *)
+                             0x5bfd   0x18  Code  Gb  main.o [1]
+std::string::assign(char const *, unsigned int)
+                             0x56af   0x52  Code  Gb  main.o [1]
+std::string::assign(const std::string&, unsigned int, unsigned int)
+                             0x5405   0x7c  Code  Gb  main.o [1]
+std::string::assign(unsigned int, char)
+                             0x2953   0x3a  Code  Gb  main.o [1]
+std::string::basic_string(char const *)
+                             0x5bd9   0x24  Code  Gb  main.o [1]
+std::string::basic_string(unsigned int, char)
+                             0x2723   0x2a  Code  Gb  main.o [1]
+std::string::erase(unsigned int)
+                             0x5481   0x22  Code  Gb  main.o [1]
+std::string::erase(unsigned int, unsigned int)
+                             0x54a3   0x6c  Code  Gb  main.o [1]
+std::string::insert(unsigned int, unsigned int, char)
+                             0x3411   0x96  Code  Gb  main.o [1]
+std::string::max_size() const
+                             0x2bfd   0x18  Code  Gb  main.o [1]
+std::string::operator [](unsigned int)
+                             0x27a7    0xc  Code  Gb  main.o [1]
+std::string::operator [](unsigned int) const
+                             0x26d1    0xc  Code  Gb  main.o [1]
+std::string::size() const
+                             0x26dd    0xa  Code  Gb  main.o [1]
+std::string::~basic_string()
+                             0x27b3   0x12  Code  Gb  main.o [1]
+strchr                        0xf7d         Code  Gb  strchr.o [5]
+strcspn                      0x33e9   0x22  Code  Gb  strcspn.o [2]
+strlen                        0xff5         Code  Gb  strlen.o [5]
+unsigned int std::_Find_elem<char>(char *, char)
+                             0x26fb   0x1e  Code  Gb  main.o [1]
+void std::_Deallocate<char>(char *, unsigned int)
+                             0x2ed7    0x8  Code  Gb  main.o [1]
+void std::_Wrap_alloc<std::allocator<char>>::construct<char *, char *>(char * *, char * &&...)
+                             0x2dcb   0x18  Code  Gb  main.o [1]
+void std::_Wrap_alloc<std::allocator<char>>::destroy<char *>(char * *)
+                             0x2bcf    0x8  Code  Gb  main.o [1]
+void std::allocator<char>::construct<char *, char *>(char * *, char * &&...)
+                             0x2f83   0x20  Code  Gb  main.o [1]
+void std::allocator<char>::destroy<char *>(char * *)
+                             0x2ed5    0x2  Code  Gb  main.o [1]
+void std::allocator_traits<std::allocator<char>>::construct<char *, char *>(std::allocator<char>&, char * *, char * &&...)
+                             0x2ef9   0x18  Code  Gb  main.o [1]
+void std::allocator_traits<std::allocator<char>>::destroy<char *>(std::allocator<char>&, char * *)
+                             0x2d99    0x8  Code  Gb  main.o [1]
+void std::numpunct<char>::_Getvals<char>(char)
+                             0x2f45   0x1a  Code  Gb  main.o [1]
+
+
+[1] = C:\Users\anton\OneDrive\Documentos\UTFPR\Disciplinas\Sistemas Embarcados\elf74\atbk2000_elf74\Lab1\Debug\Obj
+[2] = dl7M_tln.a
+[3] = dlpp7M_tl_nc.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  23'199 bytes of readonly  code memory
+   1'136 bytes of readonly  data memory
+  99'117 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
