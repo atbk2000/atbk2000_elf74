@@ -35,4 +35,3 @@ Respostas:
   => Para a soma dos dois valores float, foi utilizada a instrução VADD.F32, que
   realiza uma soma em ponto flutuante
 
-*/
