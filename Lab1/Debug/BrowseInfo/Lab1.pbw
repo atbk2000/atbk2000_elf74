@@ -74100,7 +74100,7 @@
     "display": "int main(void)",
     "location": {
       "column": "5",
-      "line": "32",
+      "line": "35",
       "path": "C:\\Users\\anton\\OneDrive\\Documentos\\UTFPR\\Disciplinas\\Sistemas Embarcados\\elf74\\atbk2000_elf74\\Lab1\\main.cpp"
     },
     "name": "main",
@@ -74108,13 +74108,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.cpp@2254@F@main#@valor",
+    "ID": "c:main.cpp@2377@F@main#@valor",
     "What": "Variable",
     "defdec": "Def",
     "display": "valor",
     "location": {
       "column": "9",
-      "line": "63",
+      "line": "66",
       "path": "C:\\Users\\anton\\OneDrive\\Documentos\\UTFPR\\Disciplinas\\Sistemas Embarcados\\elf74\\atbk2000_elf74\\Lab1\\main.cpp"
     },
     "name": "valor",
@@ -74122,13 +74122,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.cpp@2276@F@main#@valor2",
+    "ID": "c:main.cpp@2399@F@main#@valor2",
     "What": "Variable",
     "defdec": "Def",
     "display": "valor2",
     "location": {
       "column": "9",
-      "line": "64",
+      "line": "67",
       "path": "C:\\Users\\anton\\OneDrive\\Documentos\\UTFPR\\Disciplinas\\Sistemas Embarcados\\elf74\\atbk2000_elf74\\Lab1\\main.cpp"
     },
     "name": "valor2",

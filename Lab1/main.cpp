@@ -27,6 +27,9 @@
   __CORE__ = 13
   (versão do núcleo sendo usado)
 
+  => Para a soma dos dois valores float, foi utilizada a instrução VADD.F32, que
+  realiza uma soma em ponto flutuante
+
 */
 
 int main()
@@ -68,8 +71,6 @@ int main()
   std::cout << std::endl << valor << " + " << valor2 << " = ";
   valor += valor2;
   std::cout << valor;
-  
-  
   
   return 0;
 }

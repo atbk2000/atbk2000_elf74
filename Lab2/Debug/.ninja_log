@@ -1,0 +1,14 @@
+# ninja log v5
+2	133	6869465285846208	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Obj/Source/buttons.o	9767cc2820f89c2b
+153	232	6871498179123000	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Exe/Lab2.out	f5cea8f0005b62af
+2	146	6871498178237965	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Obj/Source/blinky.o	a52d20101fa3c5f8
+2	145	6869574484031074	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Obj/Source/startup_ewarm.o	23c1c1ee1291b709
+1	154	6869559957951695	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Obj/Source/timer.o	5c34a60bcf16a2b0
+2	144	6871499154858241	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Obj/Source/blinky.o	a52d20101fa3c5f8
+150	230	6871499155700771	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Exe/Lab2.out	f5cea8f0005b62af
+2	191	6871502055744295	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Obj/Source/blinky.o	a52d20101fa3c5f8
+196	270	6871502056537448	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Exe/Lab2.out	f5cea8f0005b62af
+1	136	6871503704209207	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Obj/Source/blinky.o	a52d20101fa3c5f8
+142	219	6871503705038627	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Exe/Lab2.out	f5cea8f0005b62af
+2	146	6871504536889350	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Obj/Source/blinky.o	a52d20101fa3c5f8
+153	228	6871504537709160	C:/Users/anton/OneDrive/Documentos/UTFPR/Disciplinas/Sistemas Embarcados/elf74/atbk2000_elf74/Lab2/Debug/Exe/Lab2.out	f5cea8f0005b62af
